@@ -26,7 +26,7 @@
 
 
 
-.navbar-cont-2 input:focus {
+.navbar-cont-2 input {
     outline: none;          
     border: 1px solid white; 
     box-shadow: 0 0 5px rgba(5, 255, 255, 0.7);
