@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 
@@ -13,6 +12,7 @@ import {
 
 import MoviePage from './pages/movie'
 import MovieDetail from './pages/movieDetails'
+import Navbar from "./component/navbar"
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<MoviePage/>}/>
         <Route path="movie/:id" element={<MovieDetail/>}/>

@@ -5,12 +5,12 @@ import {MovieContext} from "../movieContext/movieContexts"
 
 
 const MoviePage =() =>{
-    const  { movies } = useContext(MovieContext) ;
+    const  { movies , filterMovie } = useContext(MovieContext) ;
 
     const navigate = useNavigate();
 
 
-    if (movies.length===0){
+    if (filterMovie.length===0){
 
         return(
             <div className="error-cont">
@@ -29,7 +29,7 @@ const MoviePage =() =>{
     return(
         <div id="movie-cont">
             <div  className="cont">
-                {movies.map((ele) =>(
+                {filterMovie.map((ele) =>(
                     <div onClick={()=>{HandleDetailPage(ele._id)}} className="card" key={ele._id}>
                         <img src={ele.image} alt={ele.title} />
                         <h3>{ele.title}</h3>
