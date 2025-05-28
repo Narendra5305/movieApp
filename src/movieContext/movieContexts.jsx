@@ -37,12 +37,25 @@ export const MovieProvider = ({ children }) => {
       setFilterMovie(filtered);
     };
 
+      
+      const sortByAsc = () => {
+        const sorted = [...filterMovie].sort((a, b) => a.rating - b.rating);
+        setFilterMovie(sorted);
+      };
+
+      
+      const sortByDesc = () => {
+        const sorted = [...filterMovie].sort((a, b) => b.rating - a.rating);
+        setFilterMovie(sorted);
+      };
+
+
     useEffect(() => {
         fetchMovies();
     }, []);
 
   return (
-    <MovieContext.Provider value={{ movies, movieDetail, fetchMovieDetail , filterMovie , SearchByTitle}}>
+    <MovieContext.Provider value={{ movies, movieDetail, fetchMovieDetail , filterMovie , SearchByTitle , sortByAsc , sortByDesc}}>
       {children}
     </MovieContext.Provider>
   );
